@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda - Consulta de productos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <style>
+    body { max-width: 900px; margin: 0 auto; padding: 20px; font-family: sans-serif; }
+    form { margin-bottom: 15px; }
+    table { width: 100%; }
+    .bajo { color: #c0392b; font-weight: bold; }
+    #mensaje { margin: 10px 0; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Tienda de barrio</h1>
+  <p>Frontend que consulta la API REST (Node.js + PostgreSQL).</p>
+
+  <form id="filtros" class="pure-form">
+    <input id="nombre" type="text" placeholder="Buscar por nombre">
+    <select id="categoria">
+      <option value="">Todas las categorías</option>
+    </select>
+    <button type="submit" class="pure-button pure-button-primary">Buscar</button>
+    <button type="button" id="btnStock" class="pure-button">Ver stock bajo</button>
+    <button type="button" id="btnTodos" class="pure-button">Ver todos</button>
+  </form>
+
+  <div id="mensaje"></div>
+
+  <table class="pure-table pure-table-striped">
+    <thead>
+      <tr><th>ID</th><th>Producto</th><th>Categoría</th><th>Precio</th><th>Stock</th></tr>
+    </thead>
+    <tbody id="tabla"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
